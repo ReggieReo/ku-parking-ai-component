@@ -1,72 +1,136 @@
-from ultralytics import YOLO
-import torch # To check for GPU
-import mlflow
+import itertools
 import os
 
-# Define Hyperparameters
-PRETRAINED_MODEL_NAME = 'yolov8n.pt' # or 'yolov8s.pt', 'yolov8m.pt'
-DATA_YAML = 'dataset/data.yaml' # Path from Step 2.3
-EPOCHS = 50  # Start with a moderate number, e.g., 25-100
-IMAGE_SIZE = 640 # Input image size for the model
-BATCH_SIZE = 2   # Adjust based on your GPU memory (e.g., 4, 8, 16)
-PROJECT_NAME = 'YOLOv8_KU_PARKING'
-RUN_NAME = 'exp_ku_parking_yolov8n_50epochs_2_batch_2'
+import mlflow
+import torch
+from ultralytics import YOLO
 
+# --- Configuration ---
+PRETRAINED_MODEL_NAME = "yolov8s.pt" # changed to any model you like
+DATA_YAML = "dataset/data.yaml"
+ULTRALYTICS_OUTPUT_DIR = "yolo_car_gridsearch_outputs_v6"
+IMAGE_SIZE = 640
+
+# --- MLflow Setup ---
 mlflow.set_tracking_uri("http://127.0.0.1:5000")
-mlflow.set_experiment("YOLOv8_KU_PARKING")
+EXPERIMENT_NAME = "yolo_car_gridsearch_outputs_v6"
+experiment = mlflow.set_experiment(EXPERIMENT_NAME)
 
-# Check for GPU
+print(f"MLflow Tracking URI: {mlflow.get_tracking_uri()}")
+print(f"MLflow Experiment Name: {experiment.name}")
+print(f"MLflow Experiment ID: {experiment.experiment_id}")
+print(f"MLflow Artifact URI: {experiment.artifact_location}")
+
+# --- Hyperparameter Grid ---
+param_grid = {
+    "optimizer": ["auto"],
+    "batch": [8],
+    # "batch": [4, 8, 0.70],
+    "weight_decay": [0.0005, 0.00025],
+    "epochs": [50, 100],
+}
+
+keys, values = zip(*param_grid.items())
+hyperparameter_combinations = [dict(zip(keys, v)) for v in itertools.product(*values)]
+
+print(
+    f"\nStarting grid search with {len(hyperparameter_combinations)} combinations."
+)
+
+# --- Device Setup ---
 if torch.backends.mps.is_available():
-    print("MPS is available! PyTorch can use the GPU on Apple Silicon.")
-    device = torch.device("mps")
+    device_to_use = "mps"
+elif torch.cuda.is_available():
+    device_to_use = "cuda"
 else:
-    print("MPS not available. PyTorch will use CPU.")
-    device = torch.device("cpu")
-print(f"Using device: {device}")
+    device_to_use = "cpu"
+print(f"Using device: {device_to_use}")
 
-# Start an MLflow run
-with mlflow.start_run(run_name=RUN_NAME) as run:
-    print(f"MLflow Run ID: {run.info.run_id}")
-    mlflow.log_param("pretrained_model", PRETRAINED_MODEL_NAME)
-    mlflow.log_param("epochs", EPOCHS)
-    mlflow.log_param("image_size", IMAGE_SIZE)
-    mlflow.log_param("batch_size", BATCH_SIZE)
-    mlflow.log_param("data_yaml", DATA_YAML)
-    mlflow.log_param("device", device)
+# --- Grid Search Loop ---
+for i, params in enumerate(hyperparameter_combinations):
+    run_name_parts = [f"grid_run_yolo_v8s_{i+1}"]
+    for key, value in sorted(params.items()):
+        run_name_parts.append(f"{key}-{value}")
+    ultralytics_run_name = "_".join(run_name_parts)
+    mlflow_run_name = ultralytics_run_name
 
-    # Load a pre-trained YOLO model
-    model = YOLO(PRETRAINED_MODEL_NAME)
+    # *** ADDED SECTION: Ensure any lingering active run is ended ***
+    active_mlflow_run = mlflow.active_run()
+    if active_mlflow_run is not None:
+        print(
+            f"Warning: An active MLflow run ({active_mlflow_run.info.run_id}) was found before starting a new one. Ending it."
+        )
+        mlflow.end_run()
+    # *** END ADDED SECTION ***
 
-    # Train the model
-    # Ultralytics automatically logs metrics, checkpoints, and some artifacts to MLflow
-    # if mlflow is imported and an experiment is active.
-    results = model.train(
-        data=DATA_YAML,
-        epochs=EPOCHS,
-        imgsz=IMAGE_SIZE,
-        batch=BATCH_SIZE,
-        project=PROJECT_NAME, # All runs will be saved under 'yolo_ku_parking_runs/'
-        name=RUN_NAME,        # This specific run: 'yolo_ku_parking_runs/exp_ku_parking_yolov8n_50epochs'
-        device=device,        # Use '0' for first GPU, or 'cpu'
-        exist_ok=True,        # Overwrite existing run if name conflicts
-    )
+    print(f"\n--- Starting Run {i+1}/{len(hyperparameter_combinations)}: {mlflow_run_name} ---")
+    print(f"Parameters: {params}")
 
-    # After training, the best model is usually saved as:
-    # 'yolo_ku_parking_runs/exp_ku_parking_yolov8n_50epochs/weights/best.pt'
-    best_model_path = os.path.join(PROJECT_NAME, RUN_NAME, 'weights', 'best.pt')
+    with mlflow.start_run(run_name=mlflow_run_name) as run:
+        # This is the run object for the current run
+        # print(f"MLflow Run ID for this iteration: {run.info.run_id}") # For debugging
 
-    if os.path.exists(best_model_path):
-        print(f"Best model saved at: {best_model_path}")
-        mlflow.log_artifact(best_model_path, artifact_path="yolo_model_weights")
+        mlflow.log_param("pretrained_model", PRETRAINED_MODEL_NAME)
+        mlflow.log_param("image_size", IMAGE_SIZE)
+        mlflow.log_param("data_yaml", DATA_YAML)
+        mlflow.log_param("device_used", device_to_use)
 
-        run_output_dir = os.path.join(PROJECT_NAME, RUN_NAME)
-        for item in ['results.csv', 'confusion_matrix.png', 'F1_curve.png', 'PR_curve.png']:
-            item_path = os.path.join(run_output_dir, item)
-            if os.path.exists(item_path):
-                mlflow.log_artifact(item_path, artifact_path="training_results")
+        for param_name, param_value in params.items():
+            mlflow.log_param(param_name, param_value)
+
+        try:
+            model = YOLO(PRETRAINED_MODEL_NAME)
+            model.train(
+                data=DATA_YAML,
+                imgsz=IMAGE_SIZE,
+                project=ULTRALYTICS_OUTPUT_DIR,
+                name=ultralytics_run_name,
+                device=device_to_use,
+                exist_ok=True,
+                **params
+            )
+
+            run_output_dir = os.path.join(
+                ULTRALYTICS_OUTPUT_DIR, ultralytics_run_name
+            )
+            best_model_path = os.path.join(run_output_dir, "weights", "best.pt")
+
+            if os.path.exists(best_model_path):
+                mlflow.log_artifact(
+                    best_model_path, artifact_path="yolo_model_weights"
+                )
             else:
-                print(f"Warning: {item_path} not found for logging.")
-    else:
-        print(f"Error: Best model not found at {best_model_path}")
+                print(
+                    f"Warning: Best model not found at {best_model_path} for run {mlflow_run_name}"
+                )
 
-    print("Training finished. Check MLflow UI for metrics and artifacts.")
+            artifacts_to_log = [
+                "results.csv", "confusion_matrix.png", "F1_curve.png",
+                "PR_curve.png", "P_curve.png", "R_curve.png", "labels.jpg",
+                "labels_correlogram.jpg", "val_batch0_labels.jpg",
+                "val_batch0_pred.jpg",
+            ]
+            for item_name in artifacts_to_log:
+                item_path = os.path.join(run_output_dir, item_name)
+                if os.path.exists(item_path):
+                    mlflow.log_artifact(
+                        item_path, artifact_path="training_outputs"
+                    )
+                else:
+                    print(
+                        f"Info: Artifact '{item_name}' not found at {item_path} for logging in run {mlflow_run_name}."
+                    )
+            mlflow.set_tag("run_status", "completed") # Use set_tag for status
+            print(f"--- Finished Run: {mlflow_run_name} ---")
+
+        except Exception as e:
+            print(f"!!! Error during run {mlflow_run_name}: {e} !!!")
+            # Ensure tags/params are logged even on error, if possible (run is active)
+            try:
+                mlflow.set_tag("run_status", "failed")
+                mlflow.log_param("error_message", str(e)) # Log error as param
+            except Exception as log_err:
+                print(f"Error logging failure status to MLflow: {log_err}")
+            continue
+
+print("\nGrid search finished. Check MLflow UI for results.")
