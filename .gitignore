@@ -1,8 +1,6 @@
-mlruns/
 dataset/
 *.pt
 *.yaml
-*.txt
 *.jpg
 *.png
 mlartifacts/
@@ -18,4 +16,5 @@ venv
 yolo_ku_parking_runs/
 YOLOv8_KU_PARKING/
 runs/
+my_image_results/
 yolo*

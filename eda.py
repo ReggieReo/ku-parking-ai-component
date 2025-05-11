@@ -61,8 +61,3 @@ if class_counts:
     plt.xlabel('Class')
     plt.ylabel('Number of Instances')
     plt.show()
-
-# 3. Basic statistics of bounding boxes (optional, more advanced)
-# You could parse all label files to get distributions of box sizes, aspect ratios etc.
-# This helps identify if your objects are typically small, large, wide, tall.
-# For simplicity, we'll skip detailed bbox stats here but it's good practice.
