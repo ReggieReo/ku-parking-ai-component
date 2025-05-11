@@ -54,14 +54,12 @@ for i, params in enumerate(hyperparameter_combinations):
     ultralytics_run_name = "_".join(run_name_parts)
     mlflow_run_name = ultralytics_run_name
 
-    # *** ADDED SECTION: Ensure any lingering active run is ended ***
     active_mlflow_run = mlflow.active_run()
     if active_mlflow_run is not None:
         print(
             f"Warning: An active MLflow run ({active_mlflow_run.info.run_id}) was found before starting a new one. Ending it."
         )
         mlflow.end_run()
-    # *** END ADDED SECTION ***
 
     print(f"\n--- Starting Run {i+1}/{len(hyperparameter_combinations)}: {mlflow_run_name} ---")
     print(f"Parameters: {params}")

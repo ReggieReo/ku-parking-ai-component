@@ -17,3 +17,5 @@ extracted_frames_sample_data_output/
 venv
 yolo_ku_parking_runs/
 YOLOv8_KU_PARKING/
+runs/
+yolo*
