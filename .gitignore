@@ -1,4 +1,3 @@
-dataset/
 sample_data/
 extracted_frames_sample_data_output/
 venv
@@ -8,5 +7,4 @@ runs/
 my_image_results/
 yolov8*
 yolo_car*
-gran-cam-output
 __pycache__/

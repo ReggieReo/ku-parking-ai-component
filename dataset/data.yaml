@@ -1,0 +1,9 @@
+# dataset/data.yaml
+train: /Users/reoreggie/Documents/project/dataset/images/train # path to train images
+val: /Users/reoreggie/Documents/project/dataset/images/val # path to validation images
+
+# Number of classes
+nc: 1
+
+# Class names
+names: ["car"]
