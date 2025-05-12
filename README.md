@@ -34,7 +34,7 @@ To develop and deploy a YOLOv8 model capable of accurately detecting cars in ima
 2.  **Create a Virtual Environment and Install Dependencies:**
 
     ```bash
-    python3 -m venv venv
+    python -m venv venv
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     pip install -r requirements.txt
     ```
@@ -62,7 +62,6 @@ To develop and deploy a YOLOv8 model capable of accurately detecting cars in ima
     ```bash
     python eda.py --dataset_path dataset/
     ```
-
 
 7.  **Setup and Run MLflow:**
     Start the MLflow tracking server. You can use the local filesystem or a dedicated server.
@@ -120,10 +119,80 @@ To develop and deploy a YOLOv8 model capable of accurately detecting cars in ima
 
 ## Server API Endpoints
 
-The server (`server/app.py` or similar) provides the following endpoints for model inference:
+The server (`server/main.py` or similar) provides the following endpoints for model inference:
 
 - **`/predict`** (POST):
-  - Description: Uploads an image to detect cars.
-  - Request: Multipart/form-data with an image file.
-  - Response: JSON containing bounding box coordinates, class labels, and confidence scores for detected cars.
-  - Example: `curl -X POST -F "image=@/path/to/image.jpg" http://localhost:PORT/predict` (Replace `PORT` with the actual port number the server is running on, commonly 5000, 8000, or as defined in the server script).
+
+  - **Description:** Processes an uploaded image and returns detected cars.
+  - **Endpoint:** `POST /predict`
+  - **Request:**
+    - `Content-Type: multipart/form-data`
+    - Body:
+      - `file`: Image file (JPEG, PNG, etc.)
+  - **Output Fields:**
+    - `detections` (Array): List of detected cars.
+    - `image_filename` (String): Name of the processed image file.
+    - `object_count` (Integer): Number of cars detected in the image.
+    - `annotated_image_base64` (String): Base64-encoded JPEG image with detection boxes drawn (may be null).
+  - **Success Response (Status 200):**
+    ```json
+    {
+      "detections": [
+        {
+          "class_name": "car",
+          "confidence": 0.92,
+          "bounding_box": {
+            "x_min": 125.4,
+            "y_min": 80.2,
+            "x_max": 350.7,
+            "y_max": 195.6
+          }
+        }
+        // ... other detections (if any)
+      ],
+      "image_filename": "parking_lot_image.jpg",
+      "object_count": 1,
+      "annotated_image_base64": "base64_encoded_image_data..."
+    }
+    ```
+  - **Error Responses:**
+    - **Status 400:** Invalid request (non-image file, corrupted image).
+      ```json
+      {
+        "detail": "Invalid file type. Please upload an image."
+      }
+      ```
+    - **Status 503:** Service unavailable (model not loaded).
+      ```json
+      {
+        "detail": "YOLO model is not loaded. Cannot process requests."
+      }
+      ```
+    - **Status 500:** Internal server error.
+      ```json
+      {
+        "detail": "Error during model prediction: [error details]"
+      }
+      ```
+  - **Example `curl`:**
+    ```bash
+    curl -X POST -F "file=@/path/to/your_image.jpg" http://localhost:8000/predict
+    ```
+
+- **`/health`** (GET):
+  - Description: Verifies the API is operational and the model is loaded correctly.
+  - Endpoint: `GET /health`
+  - **Success Response (Status 200):** API is functioning properly.
+    ```json
+    {
+      "status": "ok",
+      "message": "API is running and model is loaded."
+    }
+    ```
+  - **Error Response (Status 503):** Model loading failed.
+    ```json
+    {
+      "status": "error",
+      "message": "YOLO model not loaded."
+    }
+    ```
