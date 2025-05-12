@@ -119,8 +119,6 @@ To develop and deploy a YOLOv8 model capable of accurately detecting cars in ima
 
 ## Server API Endpoints
 
-The server (`server/main.py` or similar) provides the following endpoints for model inference:
-
 - **`/predict`** (POST):
 
   - **Description:** Processes an uploaded image and returns detected cars.
