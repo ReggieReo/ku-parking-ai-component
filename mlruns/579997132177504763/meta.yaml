@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/579997132177504763
+creation_time: 1746954442552
+experiment_id: '579997132177504763'
+last_update_time: 1746954442552
+lifecycle_stage: active
+name: yolo_car_gridsearch_outputs_v6

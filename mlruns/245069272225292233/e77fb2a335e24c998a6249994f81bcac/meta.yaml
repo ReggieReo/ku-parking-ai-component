@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/245069272225292233/e77fb2a335e24c998a6249994f81bcac/artifacts
+end_time: 1746934603565
+entry_point_name: ''
+experiment_id: '245069272225292233'
+lifecycle_stage: active
+run_id: e77fb2a335e24c998a6249994f81bcac
+run_name: rogue-duck-248
+run_uuid: e77fb2a335e24c998a6249994f81bcac
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746934603437
+status: 3
+tags: []
+user_id: reoreggie

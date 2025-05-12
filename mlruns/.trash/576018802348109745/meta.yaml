@@ -1,0 +1,7 @@
+artifact_location: mlflow-artifacts:/576018802348109745
+creation_time: 1746883637619
+experiment_id: '576018802348109745'
+last_update_time: 1746884926345
+lifecycle_stage: deleted
+name: yolo_ku_parking_runs
+tags: {}

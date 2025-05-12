@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/537568541065232906/88954007b18040d985311896bb154a15/artifacts
+end_time: 1746940441479
+entry_point_name: ''
+experiment_id: '537568541065232906'
+lifecycle_stage: active
+run_id: 88954007b18040d985311896bb154a15
+run_name: bouncy-jay-699
+run_uuid: 88954007b18040d985311896bb154a15
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746940441358
+status: 3
+tags: []
+user_id: reoreggie

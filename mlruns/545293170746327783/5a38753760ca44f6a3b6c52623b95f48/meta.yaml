@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/545293170746327783/5a38753760ca44f6a3b6c52623b95f48/artifacts
+end_time: 1746953449965
+entry_point_name: ''
+experiment_id: '545293170746327783'
+lifecycle_stage: active
+run_id: 5a38753760ca44f6a3b6c52623b95f48
+run_name: sedate-trout-744
+run_uuid: 5a38753760ca44f6a3b6c52623b95f48
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746953449839
+status: 3
+tags: []
+user_id: reoreggie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/579997132177504763/f20d6d16899146bd9b02926a7027397a/artifacts
+end_time: 1746958913509
+entry_point_name: ''
+experiment_id: '579997132177504763'
+lifecycle_stage: active
+run_id: f20d6d16899146bd9b02926a7027397a
+run_name: clean-penguin-368
+run_uuid: f20d6d16899146bd9b02926a7027397a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746958913343
+status: 3
+tags: []
+user_id: reoreggie

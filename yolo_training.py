@@ -6,7 +6,7 @@ import torch
 from ultralytics import YOLO
 
 # --- Configuration ---
-PRETRAINED_MODEL_NAME = "yolov8s.pt" # changed to any model you like
+PRETRAINED_MODEL_NAME = "yolov8n.pt" # changed to any model you like
 DATA_YAML = "dataset/data.yaml"
 ULTRALYTICS_OUTPUT_DIR = "yolo_car_gridsearch_outputs_v6"
 IMAGE_SIZE = 640

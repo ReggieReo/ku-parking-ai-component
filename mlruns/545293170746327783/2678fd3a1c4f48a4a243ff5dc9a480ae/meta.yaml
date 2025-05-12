@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/545293170746327783/2678fd3a1c4f48a4a243ff5dc9a480ae/artifacts
+end_time: 1746953695998
+entry_point_name: ''
+experiment_id: '545293170746327783'
+lifecycle_stage: active
+run_id: 2678fd3a1c4f48a4a243ff5dc9a480ae
+run_name: selective-dolphin-71
+run_uuid: 2678fd3a1c4f48a4a243ff5dc9a480ae
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746953695896
+status: 3
+tags: []
+user_id: reoreggie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/537568541065232906/0437f0d79ac6437a9c11903aa6091a1b/artifacts
+end_time: 1746944424109
+entry_point_name: ''
+experiment_id: '537568541065232906'
+lifecycle_stage: active
+run_id: 0437f0d79ac6437a9c11903aa6091a1b
+run_name: efficient-cod-163
+run_uuid: 0437f0d79ac6437a9c11903aa6091a1b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746944423980
+status: 3
+tags: []
+user_id: reoreggie

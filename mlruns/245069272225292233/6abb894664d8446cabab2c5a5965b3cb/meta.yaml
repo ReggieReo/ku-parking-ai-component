@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/245069272225292233/6abb894664d8446cabab2c5a5965b3cb/artifacts
+end_time: 1746934911480
+entry_point_name: ''
+experiment_id: '245069272225292233'
+lifecycle_stage: active
+run_id: 6abb894664d8446cabab2c5a5965b3cb
+run_name: secretive-whale-353
+run_uuid: 6abb894664d8446cabab2c5a5965b3cb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746934911357
+status: 3
+tags: []
+user_id: reoreggie

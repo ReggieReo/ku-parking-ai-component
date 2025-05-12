@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/245069272225292233/5aaa943336d54a35b68248899d3b9765/artifacts
+end_time: 1746907139033
+entry_point_name: ''
+experiment_id: '245069272225292233'
+lifecycle_stage: active
+run_id: 5aaa943336d54a35b68248899d3b9765
+run_name: entertaining-ant-522
+run_uuid: 5aaa943336d54a35b68248899d3b9765
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746907138910
+status: 3
+tags: []
+user_id: reoreggie

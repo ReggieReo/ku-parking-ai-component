@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/345266831538558357/c5d1b64430674734a249afc972182143/artifacts
+end_time: 1746885483869
+entry_point_name: ''
+experiment_id: '345266831538558357'
+lifecycle_stage: active
+run_id: c5d1b64430674734a249afc972182143
+run_name: sassy-shrew-386
+run_uuid: c5d1b64430674734a249afc972182143
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746885483803
+status: 3
+tags: []
+user_id: reoreggie

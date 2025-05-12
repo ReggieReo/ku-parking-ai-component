@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/579997132177504763/6d239062899b450ebe0785bd36c4305e/artifacts
+end_time: 1746954978620
+entry_point_name: ''
+experiment_id: '579997132177504763'
+lifecycle_stage: active
+run_id: 6d239062899b450ebe0785bd36c4305e
+run_name: gentle-swan-25
+run_uuid: 6d239062899b450ebe0785bd36c4305e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746954978467
+status: 3
+tags: []
+user_id: reoreggie

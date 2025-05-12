@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/245069272225292233/deee621c22b74065aff8be4591c45d31/artifacts
+end_time: 1746888606701
+entry_point_name: ''
+experiment_id: '245069272225292233'
+lifecycle_stage: active
+run_id: deee621c22b74065aff8be4591c45d31
+run_name: dazzling-ant-959
+run_uuid: deee621c22b74065aff8be4591c45d31
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746888606570
+status: 3
+tags: []
+user_id: reoreggie

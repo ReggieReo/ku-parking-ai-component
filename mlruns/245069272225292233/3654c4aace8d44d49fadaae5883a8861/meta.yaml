@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/245069272225292233/3654c4aace8d44d49fadaae5883a8861/artifacts
+end_time: 1746933727377
+entry_point_name: ''
+experiment_id: '245069272225292233'
+lifecycle_stage: active
+run_id: 3654c4aace8d44d49fadaae5883a8861
+run_name: valuable-toad-135
+run_uuid: 3654c4aace8d44d49fadaae5883a8861
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746933727260
+status: 3
+tags: []
+user_id: reoreggie

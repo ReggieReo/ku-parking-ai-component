@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/245069272225292233/44c2fd23fafd42389e96325fe7fd1f2b/artifacts
+end_time: 1746889692583
+entry_point_name: ''
+experiment_id: '245069272225292233'
+lifecycle_stage: active
+run_id: 44c2fd23fafd42389e96325fe7fd1f2b
+run_name: bemused-hare-415
+run_uuid: 44c2fd23fafd42389e96325fe7fd1f2b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746889692475
+status: 3
+tags: []
+user_id: reoreggie

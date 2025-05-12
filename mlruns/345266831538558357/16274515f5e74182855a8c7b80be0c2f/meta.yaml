@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/345266831538558357/16274515f5e74182855a8c7b80be0c2f/artifacts
+end_time: 1746883576171
+entry_point_name: ''
+experiment_id: '345266831538558357'
+lifecycle_stage: active
+run_id: 16274515f5e74182855a8c7b80be0c2f
+run_name: exp_ku_parking_yolov8n_50epochs
+run_uuid: 16274515f5e74182855a8c7b80be0c2f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746883575401
+status: 4
+tags: []
+user_id: reoreggie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/579997132177504763/e86c9d9dcf584911957c4b6d3d745d82/artifacts
+end_time: 1746956727602
+entry_point_name: ''
+experiment_id: '579997132177504763'
+lifecycle_stage: active
+run_id: e86c9d9dcf584911957c4b6d3d745d82
+run_name: debonair-bug-722
+run_uuid: e86c9d9dcf584911957c4b6d3d745d82
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746956727402
+status: 3
+tags: []
+user_id: reoreggie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/245069272225292233/9af6bb99b8374c90b27ddb60661995a7/artifacts
+end_time: 1746894231790
+entry_point_name: ''
+experiment_id: '245069272225292233'
+lifecycle_stage: active
+run_id: 9af6bb99b8374c90b27ddb60661995a7
+run_name: rebellious-koi-307
+run_uuid: 9af6bb99b8374c90b27ddb60661995a7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746894231666
+status: 3
+tags: []
+user_id: reoreggie

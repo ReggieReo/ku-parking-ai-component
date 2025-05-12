@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/245069272225292233/991c6f109e62484eb78be1c746b5f4ea/artifacts
+end_time: 1746890673119
+entry_point_name: ''
+experiment_id: '245069272225292233'
+lifecycle_stage: active
+run_id: 991c6f109e62484eb78be1c746b5f4ea
+run_name: languid-toad-603
+run_uuid: 991c6f109e62484eb78be1c746b5f4ea
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746890672993
+status: 3
+tags: []
+user_id: reoreggie

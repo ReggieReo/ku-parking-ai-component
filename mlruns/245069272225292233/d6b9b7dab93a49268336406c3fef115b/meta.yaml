@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/245069272225292233/d6b9b7dab93a49268336406c3fef115b/artifacts
+end_time: 1746897896556
+entry_point_name: ''
+experiment_id: '245069272225292233'
+lifecycle_stage: active
+run_id: d6b9b7dab93a49268336406c3fef115b
+run_name: gifted-flea-248
+run_uuid: d6b9b7dab93a49268336406c3fef115b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746897896417
+status: 3
+tags: []
+user_id: reoreggie

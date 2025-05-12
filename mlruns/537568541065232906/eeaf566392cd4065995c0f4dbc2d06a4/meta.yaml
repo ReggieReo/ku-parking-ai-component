@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/537568541065232906/eeaf566392cd4065995c0f4dbc2d06a4/artifacts
+end_time: 1746943509796
+entry_point_name: ''
+experiment_id: '537568541065232906'
+lifecycle_stage: active
+run_id: eeaf566392cd4065995c0f4dbc2d06a4
+run_name: luxuriant-finch-822
+run_uuid: eeaf566392cd4065995c0f4dbc2d06a4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746943509415
+status: 3
+tags: []
+user_id: reoreggie

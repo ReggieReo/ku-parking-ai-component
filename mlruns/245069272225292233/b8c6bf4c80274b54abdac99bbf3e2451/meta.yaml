@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/245069272225292233/b8c6bf4c80274b54abdac99bbf3e2451/artifacts
+end_time: 1746887915722
+entry_point_name: ''
+experiment_id: '245069272225292233'
+lifecycle_stage: active
+run_id: b8c6bf4c80274b54abdac99bbf3e2451
+run_name: wistful-snake-101
+run_uuid: b8c6bf4c80274b54abdac99bbf3e2451
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746887915525
+status: 3
+tags: []
+user_id: reoreggie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/245069272225292233/17cd29b8ac124a5181ab44dedb936755/artifacts
+end_time: 1746890088190
+entry_point_name: ''
+experiment_id: '245069272225292233'
+lifecycle_stage: active
+run_id: 17cd29b8ac124a5181ab44dedb936755
+run_name: valuable-stoat-563
+run_uuid: 17cd29b8ac124a5181ab44dedb936755
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746890088070
+status: 3
+tags: []
+user_id: reoreggie

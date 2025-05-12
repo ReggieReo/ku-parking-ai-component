@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/245069272225292233/aee81e8b92da407ebdba05871cc932ef/artifacts
+end_time: 1746900093369
+entry_point_name: ''
+experiment_id: '245069272225292233'
+lifecycle_stage: active
+run_id: aee81e8b92da407ebdba05871cc932ef
+run_name: masked-conch-217
+run_uuid: aee81e8b92da407ebdba05871cc932ef
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746900093250
+status: 3
+tags: []
+user_id: reoreggie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/545293170746327783/f09d83c2d2c74249b67d12119b535ccc/artifacts
+end_time: 1746952744770
+entry_point_name: ''
+experiment_id: '545293170746327783'
+lifecycle_stage: active
+run_id: f09d83c2d2c74249b67d12119b535ccc
+run_name: amazing-bear-45
+run_uuid: f09d83c2d2c74249b67d12119b535ccc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746952744697
+status: 3
+tags: []
+user_id: reoreggie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/537568541065232906/e8c8b4dcb58344c99e74198a218cf922/artifacts
+end_time: 1746942983369
+entry_point_name: ''
+experiment_id: '537568541065232906'
+lifecycle_stage: active
+run_id: e8c8b4dcb58344c99e74198a218cf922
+run_name: glamorous-yak-581
+run_uuid: e8c8b4dcb58344c99e74198a218cf922
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746942983292
+status: 3
+tags: []
+user_id: reoreggie

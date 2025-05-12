@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/882402553598434582
+creation_time: 1746933318244
+experiment_id: '882402553598434582'
+last_update_time: 1746933318244
+lifecycle_stage: active
+name: YOLOv8_Car_Detection_GridSearch_v3

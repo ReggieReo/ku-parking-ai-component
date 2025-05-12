@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/545293170746327783/128ddb9e4a6e46629380d1b269e3ca64/artifacts
+end_time: 1746953695747
+entry_point_name: ''
+experiment_id: '545293170746327783'
+lifecycle_stage: active
+run_id: 128ddb9e4a6e46629380d1b269e3ca64
+run_name: grid_run_3_batch-16_epochs-50_optimizer-auto_weight_decay-0.00025
+run_uuid: 128ddb9e4a6e46629380d1b269e3ca64
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746953449972
+status: 3
+tags: []
+user_id: reoreggie

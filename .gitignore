@@ -1,15 +1,4 @@
 dataset/
-*.pt
-*.yaml
-*.jpg
-*.png
-mlartifacts/
-*.log
-*.json
-*.csv
-*.jsonl
-*.jsonl.gz
-*.jsonl.gz.part
 sample_data/
 extracted_frames_sample_data_output/
 venv
@@ -17,4 +6,6 @@ yolo_ku_parking_runs/
 YOLOv8_KU_PARKING/
 runs/
 my_image_results/
-yolo*
+yolov8*
+yolo_car*
+gran-cam-output

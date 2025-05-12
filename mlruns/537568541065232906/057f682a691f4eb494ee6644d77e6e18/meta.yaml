@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/537568541065232906/057f682a691f4eb494ee6644d77e6e18/artifacts
+end_time: 1746935909666
+entry_point_name: ''
+experiment_id: '537568541065232906'
+lifecycle_stage: active
+run_id: 057f682a691f4eb494ee6644d77e6e18
+run_name: amazing-gull-548
+run_uuid: 057f682a691f4eb494ee6644d77e6e18
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746935909571
+status: 3
+tags: []
+user_id: reoreggie

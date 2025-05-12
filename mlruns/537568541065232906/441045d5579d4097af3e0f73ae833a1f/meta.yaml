@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/537568541065232906/441045d5579d4097af3e0f73ae833a1f/artifacts
+end_time: 1746941513667
+entry_point_name: ''
+experiment_id: '537568541065232906'
+lifecycle_stage: active
+run_id: 441045d5579d4097af3e0f73ae833a1f
+run_name: capricious-shoat-619
+run_uuid: 441045d5579d4097af3e0f73ae833a1f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746941513545
+status: 3
+tags: []
+user_id: reoreggie

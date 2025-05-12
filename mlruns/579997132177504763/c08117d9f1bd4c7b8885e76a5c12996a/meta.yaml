@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/579997132177504763/c08117d9f1bd4c7b8885e76a5c12996a/artifacts
+end_time: 1746956218302
+entry_point_name: ''
+experiment_id: '579997132177504763'
+lifecycle_stage: active
+run_id: c08117d9f1bd4c7b8885e76a5c12996a
+run_name: valuable-mole-326
+run_uuid: c08117d9f1bd4c7b8885e76a5c12996a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746956218108
+status: 3
+tags: []
+user_id: reoreggie

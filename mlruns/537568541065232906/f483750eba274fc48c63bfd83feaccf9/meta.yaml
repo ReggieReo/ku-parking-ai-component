@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/537568541065232906/f483750eba274fc48c63bfd83feaccf9/artifacts
+end_time: 1746939791608
+entry_point_name: ''
+experiment_id: '537568541065232906'
+lifecycle_stage: active
+run_id: f483750eba274fc48c63bfd83feaccf9
+run_name: gaudy-snipe-220
+run_uuid: f483750eba274fc48c63bfd83feaccf9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746939791481
+status: 3
+tags: []
+user_id: reoreggie
