@@ -76,6 +76,8 @@ To develop and deploy a YOLOv8 model capable of accurately detecting cars in ima
     Ensure your training script (`yolo_training.py`) is configured to log to this MLflow instance.
 
 8.  **Run Training:**
+    
+    **Option A: Local Training (Requires GPU)**
     Execute the `yolo_training.py` script. You might need to configure parameters within the script (e.g., dataset path, model configuration, epochs, batch size).
 
     ```bash
@@ -84,6 +86,21 @@ To develop and deploy a YOLOv8 model capable of accurately detecting cars in ima
 
     (Adjust parameters as per your `yolo_training.py` script's requirements).
     Experiments will be logged to MLflow.
+
+    **Option B: Cloud Training (Google Colab - Free GPU) 🚀**
+    If you don't have a local GPU or want to use free cloud resources:
+
+    1. Upload your dataset to Google Drive
+    2. Open `yolo_parking_colab_training.ipynb` in [Google Colab](https://colab.research.google.com)
+    3. Enable GPU: `Runtime → Change runtime type → GPU`
+    4. Follow the instructions in [`COLAB_GUIDE.md`](COLAB_GUIDE.md)
+    5. Run all cells to train your model with free GPU access
+
+    **Benefits of Cloud Training:**
+    - Free GPU access (NVIDIA T4)
+    - No local setup required
+    - Automatic dependency installation
+    - Easy model download and sharing
 
 9.  **Test Model Locally:**
     Use the `test_local.py` script to try out a trained model. You'll typically need the model URI or path from an MLflow run.
