@@ -4,6 +4,7 @@ import os
 import mlflow
 import torch
 from ultralytics import YOLO
+from ultralytics import settings
 
 # --- Configuration ---
 PRETRAINED_MODEL_NAME = "yolov8n.pt" # changed to any model you like
@@ -13,6 +14,7 @@ IMAGE_SIZE = 640
 
 # --- MLflow Setup ---
 mlflow.set_tracking_uri("http://127.0.0.1:5000")
+settings.update({"mlflow": True})
 EXPERIMENT_NAME = "yolo_car_gridsearch_outputs_v6"
 experiment = mlflow.set_experiment(EXPERIMENT_NAME)
 

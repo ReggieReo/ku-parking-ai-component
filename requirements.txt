@@ -9,7 +9,7 @@ ttach==0.0.3
 YOLOv8_Explainer==0.0.5
 mlflow
 fastapi 
-"uvicorn[standard]" 
+uvicorn[standard]
 python-multipart 
 ultralytics 
 Pillow

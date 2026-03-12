@@ -7,4 +7,5 @@ runs/
 my_image_results/
 yolov8*
 yolo_car*
+yolo26* 
 __pycache__/
